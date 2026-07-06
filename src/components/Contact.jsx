@@ -36,7 +36,7 @@ export default function Contact() {
 
       await emailjs.send(
         'service_hd2m94d',
-        'service_hd2m94d',
+        'template_8z6bwmq',
         templateParams,
         'EQotM3GuP9qCQk9c4'
       )
