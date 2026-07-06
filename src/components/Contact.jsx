@@ -27,19 +27,28 @@ export default function Contact() {
     try {
       const templateParams = {
         from_name: formData.name,
+        reply_to: formData.email,
         from_email: formData.email,
         to_email: 'majumdersaptarshi85@gmail.com',
-        subject: formData.name,
+        subject: `Portfolio message from ${formData.name}`,
         message: formData.message,
       }
 
-      await emailjs.send('service_hd2m94d', 'template_8z6bwmq', templateParams)
+      await emailjs.send(
+        'service_hd2m94d',
+        'service_hd2m94d',
+        templateParams,
+        'EQotM3GuP9qCQk9c4'
+      )
 
       setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' })
       setFormData({ name: '', email: '', message: '' })
     } catch (error) {
       console.error('Email error:', error)
-      setStatus({ type: 'error', message: 'Failed to send message. Please try again or email me directly.' })
+      setStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again or email me directly at majumdersaptarshi85@gmail.com.',
+      })
     } finally {
       setIsLoading(false)
     }
