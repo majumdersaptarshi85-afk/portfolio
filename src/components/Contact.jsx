@@ -11,7 +11,7 @@ export default function Contact() {
 
   useEffect(() => {
     // Initialize EmailJS with your public key
-    emailjs.init('ZcYVLpL3iQmvKMqvZ')
+    emailjs.init('EQotM3GuP9qCQk9c4')
   }, [])
 
   const handleChange = (e) => {
@@ -28,12 +28,12 @@ export default function Contact() {
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        to_email: 'skmajumdar86@gmail.com',
+        to_email: 'majumdersaptarshi85@gmail.com',
         subject: formData.name,
         message: formData.message,
       }
 
-      await emailjs.send('service_iqamzi1', 'template_pygc9q8', templateParams)
+      await emailjs.send('service_hd2m94d', 'template_8z6bwmq', templateParams)
 
       setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' })
       setFormData({ name: '', email: '', message: '' })
